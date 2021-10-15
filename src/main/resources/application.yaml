@@ -3,6 +3,6 @@ server:
 spring:
   data:
     mongodb:
-      database: springTodos
+      database: usersDataDB
       host: localhost
       port: 27017

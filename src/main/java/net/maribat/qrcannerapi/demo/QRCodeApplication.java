@@ -1,4 +1,4 @@
-package net.examlpe.springdemo;
+package net.maribat.qrcannerapi.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
