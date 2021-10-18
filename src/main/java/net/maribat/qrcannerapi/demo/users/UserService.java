@@ -1,17 +1,34 @@
 package net.maribat.qrcannerapi.demo.users;
 
+import net.maribat.qrcannerapi.demo.error.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+@Service
+public class UserService {
+    @Autowired
+    UserRepository userRepository;
 
-public interface UserService {
-    public User getUserById(String id);
+    public User getUserById(String id) {
+        Optional<User> productDb = this.userRepository.findById(id);
 
-    public List<User> getAllUsers();
+        if (productDb.isPresent()) {
+            return productDb.get();
+        } else {
+            throw new NotFoundException("Record not found with id : " + id);
+        }
+    }
 
-    public User createUser(User user);
+    List<User> getAllUsers() {
+        return this.userRepository.findAll();
+    }
+
+    public User createUser(User user) {
+        return userRepository.save(user);
+    }
 }
 
 

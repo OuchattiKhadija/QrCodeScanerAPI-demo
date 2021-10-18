@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/v1/user")
+@RequestMapping(value = "/api/v1/users")
 public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/users")
+    @GetMapping(value = {"", "/"})
     public ResponseEntity <List< User >> getAllUsers() {
         return ResponseEntity.ok().body(userService.getAllUsers());
     }
@@ -23,7 +23,7 @@ public class UserController {
         return ResponseEntity.ok().body(userService.getUserById(id));
     }
 
-    @PostMapping("/users")
+    @PostMapping(value = {"", "/"})
     public ResponseEntity < User > createProduct(@RequestBody User user) {
         return ResponseEntity.ok().body(this.userService.createUser(user));
     }
