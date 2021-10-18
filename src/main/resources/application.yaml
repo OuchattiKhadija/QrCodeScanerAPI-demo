@@ -3,6 +3,4 @@ server:
 spring:
   data:
     mongodb:
-      database: usersDataDB
-      host: localhost
-      port: 27017
+      uri: mongodb+srv://taskmanager:taskmanager@cluster0.xarxj.mongodb.net/users-api-scanner
