@@ -1,0 +1,6 @@
+server:
+  port: 20142
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://taskmanager:taskmanager@cluster0.xarxj.mongodb.net/users-api-scanner
